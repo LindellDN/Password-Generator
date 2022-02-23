@@ -11,8 +11,9 @@ if (pwLength < 8) {
   prompt ("generated passwords must be at least 8 characters", '')
 }
 //else statment to proceed to next prompt
-else {
-  let pwLength = prompt ("please choose between a password length between 8 and 128 characters",'')
+//prompt for included character types
+else if {
+  prompt ("")
 }
 
 //prompt for included character types
