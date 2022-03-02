@@ -1,40 +1,67 @@
 // Assignment code here
-/*
 // mkae a function for generating password
-function generatePassword () {
-  //passowrd length
-  //
-  //
+/*function generatePassword () {
+  
 };
 
 */
-//declare varible for user input
-//prompt for password length (between 8-128 charecters)
-let pwLength = prompt ("please choose between a password length between 8 and 128 characters",'')
-//function for password crieteria input
-//min/max character if statements
-/*
-prompt ("generated passwords must be between 8 and 128 characters",'' )
-*/
+//function for passowrd options
+function getPwOptions(){
 
-//prompts for included character types 
+//prompt for password length (between 8-128 charecters)
+var length = parseInt(
+ prompt ('please choose between a password length between 8 and 128 characters",')
+);
+
+ //password crieteria input- number
+ if (Number.isNaN(length)) {
+  alert ('please enter a numeric value between 8-128');
+  return null;
+}
+
+//min/max character length requirment  if statements
+if (length <8) {
+  alert('password must be at least 8 characters long');
+  return null
+}
+if (length <128) {
+  alert ('generated passwords must be between 8 and 128 characters');
+  return null;
+}
 
 //confirm character types
 //
-confirm ("will your password include uppercase letters?")
-//if t/f statement
-confrim ("will your password include lowercase letters?")
-//if t/f statement
-confrim ("will your password include special characters?")
-//if t/f statement
-confirm ("will your password include numerals?")
-//if t/f statement
-/*
-make a loop while all repones = false
-*/
+var hasUpperCase = confirm("your password include uppercase letters?");
+var hasLowerCase = confrim ("will your password include lowercase letters?");
+var hasSpecChar = confrim ("will your password include special characters?");
+var hasNumeral = confirm ("will your password include numerals?");
+
+
+//if all reponses to char selction = false
+if (
+  hasUpperCase === false &&
+  hasLowerCase === false &&
+  hasSpecChar === false &&
+  hasNumeral === false
+) {
+  alert ('you must select at least one character type');
+  return null;
+}
+//store user password choices
+var pwOptions = {
+  length: length,
+  hasUpperCase: hasUpperCase,
+  hasLowerCase: hasLowerCase,
+  hasSpecChar: hasSpecChar,
+  hasNumeral: hasNumeral
+};
+return pwOptions;
+
+
+}
 
 //arry of uppercase
-const upperCase = [
+var upperCase = [
   "A",
   "B",
   "C",
@@ -63,7 +90,7 @@ const upperCase = [
   "Z"
 ]
 //array of lowercase
-const lowerCase = [
+var lowerCase = [
   "a",
   "b",
   "c",
@@ -92,7 +119,7 @@ const lowerCase = [
   "z"
 ]
 //array of numbers
-const numeral = [
+var numeral = [
   "1",
   "2",
   "3",
@@ -105,7 +132,7 @@ const numeral = [
   "0"
 ]
 //array of character types
-const specChar = [
+var specChar = [
   "!",
   "@",
   "#",
@@ -119,9 +146,14 @@ const specChar = [
   "/"
 ]
 
-//minimum of 1 charecter type
-//prompt "you must select at least one chartater type"
- 
+//selcet raondom character from array function
+
+function getRandom(arr) {
+  var randomIndex = Math.floor(Math.random() * arr.length);
+  var randomElement = arr[randomIndex];
+  return randomElement;
+}
+//
 
 
 // Get references to the #generate element
