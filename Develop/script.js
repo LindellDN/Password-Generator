@@ -105,7 +105,7 @@ function getPwOptions(){
     return null;
   }
 
-  if (length <128) {
+  if (length >128) {
     alert ('generated passwords can be no longer than 128 characters');
     return null;
   }
