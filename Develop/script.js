@@ -163,7 +163,7 @@ function generatePassword () {
   if (!pwOptions){
   return null;
   }
-//conditons to add a random elemet from selected character arrays
+  //conditons to add a random elemet from selected character arrays
   if (pwOptions.hasUpperCase) {
     characterOptions =characterOptions.concat(upperCase);
     selectedCharacters.push(getRandom(upperCase));
@@ -190,12 +190,11 @@ function generatePassword () {
     result.push(characterOptions);
   }
   //condtion to set all choose character types are inculded
-  for (var i = 0; i <selectedCharacters.length; i++) 
+  for (var i = 0; i <selectedCharacters.length; i++) {
     result[i] = selectedCharacters[i];
   }
   return result.join('');
-
-
+}
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
