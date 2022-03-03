@@ -1,4 +1,6 @@
 Password Generator
+
+
 This project uses javascript with html to issue prompts and confirm dialouge checks for user input for a desired password critera.
 If inputs from user are below minimun requirements, the user must reprovide appropriate password criteria.
 
